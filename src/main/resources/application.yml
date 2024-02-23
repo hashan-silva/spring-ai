@@ -1,0 +1,8 @@
+springdoc:
+  swagger-ui:
+    path: /ai/v2/docs
+
+spring:
+  ai:
+    openai:
+      api-key: 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
