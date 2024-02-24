@@ -38,7 +38,7 @@ permissions:
 
 jobs:
   Analysis:
-    runs-on: LAPTOP-FR3MBRH8
+    runs-on: self-hosted
 
     steps:
       - name: Analyze with SonarQube
