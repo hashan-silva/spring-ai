@@ -38,7 +38,7 @@ permissions:
 
 jobs:
   Analysis:
-    runs-on: ubuntu-latest
+    runs-on: LAPTOP-FR3MBRH8
 
     steps:
       - name: Analyze with SonarQube
