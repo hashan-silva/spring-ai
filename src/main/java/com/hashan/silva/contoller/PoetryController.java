@@ -10,15 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PoetryController implements IPoetryController {
 
+    private final PoetryService poetryService;
+
     @Autowired
-    private PoetryService poetryService;
+    public PoetryController(PoetryService poetryService) {
+        this.poetryService = poetryService;
+    }
+
     @Override
     public ResponseEntity<String> generateHaiku() {
-        return new ResponseEntity<String>(poetryService.generateHaiku(), HttpStatus.OK);
+        return new ResponseEntity<>(poetryService.generateHaiku(), HttpStatus.OK);
     }
 
     @Override
     public ResponseEntity<Poetry> generatePoetry(String genre, String theme) {
-        return new ResponseEntity<Poetry>(poetryService.generatePoetry(genre, theme), HttpStatus.OK);
+        return new ResponseEntity<>(poetryService.generatePoetry(genre, theme), HttpStatus.OK);
     }
 }

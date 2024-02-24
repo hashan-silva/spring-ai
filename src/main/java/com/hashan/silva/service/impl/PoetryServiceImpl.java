@@ -1,7 +1,5 @@
 package com.hashan.silva.service.impl;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hashan.silva.model.Poetry;
 import com.hashan.silva.service.PoetryService;
 import com.hashan.silva.util.Constant;
@@ -15,12 +13,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class PoetryServiceImpl implements PoetryService {
 
+    private final AiClient aiClient;
+
     @Autowired
-    private AiClient aiClient;
+    public PoetryServiceImpl(AiClient aiClient) {
+        this.aiClient = aiClient;
+    }
 
     @Override
     public String generateHaiku() {
-        return aiClient.generate(Constant.WRITE_ME_HAIKU_ABOUT_CAT);
+        return this.aiClient.generate(Constant.WRITE_ME_HAIKU_ABOUT_CAT);
     }
 
     @Override
@@ -38,16 +40,8 @@ public class PoetryServiceImpl implements PoetryService {
 
         promptTemplate.setOutputParser(poetryBeanOutputParser);
 
-        AiResponse aiResponse = aiClient.generate(promptTemplate.create());
+        AiResponse aiResponse = this.aiClient.generate(promptTemplate.create());
 
-        return parsePoetryFromJson(aiResponse.getGeneration().getText());
-    }
-
-    private Poetry parsePoetryFromJson(String jsonResponse) {
-        try {
-            return new ObjectMapper().readValue(jsonResponse, Poetry.class);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
+        return poetryBeanOutputParser.parse(aiResponse.getGeneration().getText());
     }
 }
