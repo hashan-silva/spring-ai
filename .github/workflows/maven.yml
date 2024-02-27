@@ -15,10 +15,9 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
+  sonar-analysis:
 
-    runs-on: ubuntu-latest
-
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
