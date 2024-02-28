@@ -26,5 +26,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - name: Set up Maven
+      uses: actions/setup-java@v3
+      with:
+          distribution: 'maven'
+          java-version: '17'
     - name: Sonar Analysis
       run: mvn clean verify sonar:sonar --file pom.xml
