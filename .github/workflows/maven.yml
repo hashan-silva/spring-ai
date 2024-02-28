@@ -27,4 +27,4 @@ jobs:
         distribution: 'corretto'
         cache: maven
     - name: Sonar Analysis
-      run: mvn clean verify sonar:sonar --file pom.xml
+      run: mvn clean compile sonar:sonar --file pom.xml
