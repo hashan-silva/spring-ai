@@ -3,7 +3,6 @@ package com.hashan.silva.service.impl;
 import com.hashan.silva.model.Poetry;
 import com.hashan.silva.service.PoetryService;
 import com.hashan.silva.util.Constant;
-import org.springframework.ai.chat.ChatClient;
 import org.springframework.ai.chat.ChatResponse;
 import org.springframework.ai.chat.prompt.PromptTemplate;
 import org.springframework.ai.openai.OpenAiChatClient;
