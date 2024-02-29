@@ -9,6 +9,13 @@
     <name>spring-ai</name>
     <packaging>war</packaging>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.2</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
     <properties>
         <sonar.host.url>http://172.20.0.3:9000</sonar.host.url>
         <sonar.projectKey>HA::${artifactId}</sonar.projectKey>
@@ -17,7 +24,16 @@
 
     <repositories>
         <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
             <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
             <url>https://repo.spring.io/snapshot</url>
             <releases>
                 <enabled>false</enabled>
@@ -28,9 +44,9 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>3.0.1</version>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-bom</artifactId>
+                <version>0.8.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -41,12 +57,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>3.0.1</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.experimental.ai</groupId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
             <artifactId>spring-ai-openai-spring-boot-starter</artifactId>
-            <version>0.7.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
@@ -84,11 +102,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>3.0.2</version>
-                <configuration>
-                    <mainClass></mainClass>
-                    <layout>JAR</layout>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

@@ -3,26 +3,26 @@ package com.hashan.silva.service.impl;
 import com.hashan.silva.model.Poetry;
 import com.hashan.silva.service.PoetryService;
 import com.hashan.silva.util.Constant;
-import org.springframework.ai.client.AiClient;
-import org.springframework.ai.client.AiResponse;
+import org.springframework.ai.chat.ChatResponse;
+import org.springframework.ai.chat.prompt.PromptTemplate;
+import org.springframework.ai.openai.OpenAiChatClient;
 import org.springframework.ai.parser.BeanOutputParser;
-import org.springframework.ai.prompt.PromptTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PoetryServiceImpl implements PoetryService {
 
-    private final AiClient aiClient;
+    private final OpenAiChatClient aiClient;
 
     @Autowired
-    public PoetryServiceImpl(AiClient aiClient) {
+    public PoetryServiceImpl(OpenAiChatClient aiClient) {
         this.aiClient = aiClient;
     }
 
     @Override
     public String generateHaiku() {
-        return this.aiClient.generate(Constant.WRITE_ME_HAIKU_ABOUT_CAT);
+        return this.aiClient.call(Constant.WRITE_ME_HAIKU_ABOUT_CAT);
     }
 
     @Override
@@ -40,8 +40,8 @@ public class PoetryServiceImpl implements PoetryService {
 
         promptTemplate.setOutputParser(poetryBeanOutputParser);
 
-        AiResponse aiResponse = this.aiClient.generate(promptTemplate.create());
+        ChatResponse aiResponse = this.aiClient.call(promptTemplate.create());
 
-        return poetryBeanOutputParser.parse(aiResponse.getGeneration().getText());
+        return poetryBeanOutputParser.parse(aiResponse.getResult().getOutput().getContent());
     }
 }
