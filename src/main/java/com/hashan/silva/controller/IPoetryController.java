@@ -1,4 +1,4 @@
-package com.hashan.silva.contoller;
+package com.hashan.silva.controller;
 
 import com.hashan.silva.model.Poetry;
 import com.hashan.silva.util.Constant;

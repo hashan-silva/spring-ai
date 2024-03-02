@@ -20,6 +20,7 @@
         <sonar.host.url>http://172.20.0.3:9000</sonar.host.url>
         <sonar.projectKey>HA::${artifactId}</sonar.projectKey>
         <sonar.token>sqa_63a5b564e8ce0ef09b25018bb27ddb77dacc7b1d</sonar.token>
+        <apache.commons.io.version>2.13.0</apache.commons.io.version>
     </properties>
 
     <repositories>
@@ -67,6 +68,11 @@
             <artifactId>spring-ai-openai-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${apache.commons.io.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>1.5.12</version>
@@ -86,7 +92,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>6.0.3</version>
+            <version>6.1.4</version>
             <scope>test</scope>
         </dependency>
         <dependency>

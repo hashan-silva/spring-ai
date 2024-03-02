@@ -1,0 +1,16 @@
+I applied to a master program in LUT university, and they have sent a case study with some questions to be answered. I need to analyse the following case study and give the answers to the questions
+case study:
+	It was late October 2017 when Kimmo Rauma - CEO and founder of Visedo Oy from Lappeenranta, Finland mets some representatives of a large Danish multinational company, Danfoss, to discuss their acquisition offer. Kimmo was unsure what would be best for him and his company. The offer from Danfoss was not just a financial proposition but a startegic decision that could refedifine Visedo's future. Kimmo pondered over multiple considerations. For Kimmo, this dicision wasn't just about numbers and market shares; it was about the future of his team, the company's vision, and the legacy he hoped to leave in the industry. Kimmo reviewd his notes, reflecting on the journey so far, the rationale and potential of the acquisition and the implecations for Visedo's path forward.
+
+additional details:
+	Visedo Oy is a Finnish company specializing in electric propulsion systems for marine vessels, heavy-duty vehicles, and off-road machinery. Founded in 2009 and headquartered in Lappeenranta, Finland, Visedo focuses on providing sustainable solutions for transportation and industrial applications. The company's products include electric motors, power electronics, and energy storage systems tailored for various power requirements. Visedo's technology aims to reduce emissions and improve energy efficiency in sectors traditionally reliant on fossil fuels. In 2018, Visedo was acquired by Danfoss, a global leader in engineering solutions.
+
+I need more descriptive answers for the bellow questions
+
+Question:
+     1. what should be taken into account when making the decission?
+     2. What would be the implications of the acquisition for the Visedo's internationalization?
+     3. What would be your advice to Kimmo?
+     4. Describe the process you undergo to solve this case study
+
+ {format}
