@@ -17,7 +17,7 @@
     </parent>
 
     <properties>
-        <sonar.host.url>http://172.20.0.3:9000</sonar.host.url>
+        <sonar.host.url>http://sonar-qube:9000</sonar.host.url>
         <sonar.projectKey>HA::${artifactId}</sonar.projectKey>
         <sonar.token>sqa_63a5b564e8ce0ef09b25018bb27ddb77dacc7b1d</sonar.token>
         <apache.commons.io.version>2.13.0</apache.commons.io.version>
